@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+      * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+                /* justify-content: center; */
+                /* align-items: center; */
+            background: #1c1c1c;
+        }
+
+        .user{
+            margin: 50px;
+            height: 300px;
+            width: 270px;
+            background: #252525;
+            /* text-align: center; */
+            /* color: white; */
+            
+        }
+        .image{
+            height: 200px;
+            width: 270px;
+            background-color: aliceblue;
+            object-fit: cover;
+            overflow: hidden;
+        }
+        .image img{
+            object-fit: cover;
+            overflow: hidden;
+        }
+        .naam{
+            padding-top: 10px;
+            padding-left: 10px;
+            color: white;
+        }
+        .mail{
+            padding-left: 10px;
+            color: #b5b4b4;
+        }
+        .actions{
+            padding-top: 3px;
+            padding-left: 10px;
+        }
+        .actions a{
+            text-decoration: none;
+            
+        }
+        .edit{
+            color: blue;
+            
+        }
+        .del{
+            color: rgb(165, 0, 0);
+        }
+
+</style>
+<body>
+    <% users.forEach(function(user){ %>
+        <div class="user">
+             <div class = "image">
+                <img src="<%= user.image %>" alt="">
+             </div>
+        <h2 class="naam"><%= user.name %></h2>
+        <h4 class="mail"><%=user.email %></h4>
+        <div class="actions">
+            <a class="edit" href="">Edit</a>
+            <a class="del" href="">Delete</a>
+        </div>
+        </div>
+     <%  }) %>
+    
+    
+</body>
+</html>
