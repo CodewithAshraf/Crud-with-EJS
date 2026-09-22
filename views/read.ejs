@@ -25,24 +25,28 @@
 
         .user{
             margin: 50px;
-            height: 300px;
-            width: 270px;
+            height: 450px;
+            width: 370px;
             background: #252525;
             /* text-align: center; */
             /* color: white; */
             
         }
-        .image{
-            height: 200px;
-            width: 270px;
-            background-color: aliceblue;
-            object-fit: cover;
-            overflow: hidden;
-        }
-        .image img{
-            object-fit: cover;
-            overflow: hidden;
-        }
+     .image {
+    height: 300px;
+    width: 370px;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+      
         .naam{
             padding-top: 10px;
             padding-left: 10px;
@@ -53,6 +57,7 @@
             color: #b5b4b4;
         }
         .actions{
+
             padding-top: 3px;
             padding-left: 10px;
         }
@@ -67,6 +72,32 @@
         .del{
             color: rgb(165, 0, 0);
         }
+        .edit-btn{
+            height: 40px;
+            width: 70px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius:20px;
+            
+        }
+        .edit-btn a{
+            font-size: 17px;
+            color: white;
+        }
+          .del-btn{
+            height: 40px;
+            width: 70px;
+            background-color: rgb(232, 34, 34);
+            color: white;
+            border: none;
+            border-radius:20px;
+            
+        }
+        .del-btn a{
+            font-size: 17px;
+            color: white;
+        }
 
 </style>
 <body>
@@ -76,10 +107,11 @@
                 <img src="<%= user.image %>" alt="">
              </div>
         <h2 class="naam"><%= user.name %></h2>
-        <h4 class="mail"><%=user.email %></h4>
+        <h4 class="mail"><%=user.email %></h4><br>
+
         <div class="actions">
-            <a class="edit" href="">Edit</a>
-            <a class="del" href="">Delete</a>
+            <button class="edit-btn"><a class="edit" href="">Edit</a></button>
+            <button class="del-btn"><a class="del" href="">Delete</a></button>
         </div>
         </div>
      <%  }) %>
