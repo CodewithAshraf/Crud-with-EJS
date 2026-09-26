@@ -27,6 +27,19 @@ app.get('/read',async function(req,res){
     res.render("read",{users:allusers});
 });
 
+
+app.get('/edit/:userid',async function(req,res){
+    let user = await usermodel.findOne({_id:req.params.userid});
+    res.render("edit",{user});
+});
+
+app.post('/update/:userid',async function(req,res){
+    let {name,email,image} = req.body;
+    let user = await usermodel.findOneAndUpdate({_id:req.params.userid},{name,email,image},{new:true});
+    res.redirect    ("/read");
+});
+
+
 const PORT = 3000;
 app.listen(PORT,()=>{
     console.log(`server is running on port:${PORT}`);

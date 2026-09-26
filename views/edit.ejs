@@ -101,9 +101,9 @@
 
     <div class="form-container">
         <a class="r-link" href="/read">All Users</a>
-        <h2>Create User</h2>
+        <h2>Edit User</h2>
 
-        <form action="/create" method="POST" ">
+        <form action="/update/<%= user._id %>" method="POST">
 
             <div class="form-group">
                 <label for="name">Name</label>
@@ -113,6 +113,7 @@
                     name="name" 
                     placeholder="Enter your name"
                     required
+                    value="<%= user.name %>"
                 >
             </div>
 
@@ -124,6 +125,7 @@
                     name="email" 
                     placeholder="Enter your email"
                     required
+                    value="<%= user.email %>"
                 >
             </div>
 
@@ -135,10 +137,11 @@
                     name="image"
                     placeholder="Enter Any image"
                     required
+                    value="<%= user.image %>"
                 >
             </div>
 
-            <button type="submit">Create User</button>
+            <button type="submit">Update User</button>
             <!-- <button><a href="/read"></a>All Users</button> -->
 
         </form>
