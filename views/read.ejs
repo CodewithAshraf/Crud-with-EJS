@@ -110,8 +110,8 @@
         <h4 class="mail"><%=user.email %></h4><br>
 
         <div class="actions">
-            <button class="edit-btn"><a class="edit" href="/edit/<%= user._id%>">Edit</a></button>
-            <button class="del-btn"><a class="del" href="">Delete</a></button>
+            <button class="edit-btn"><a class="edit" href="/edit/<%= user._id %>">Edit</a></button>
+            <button class="del-btn"><a class="del" href="/delete/<%= user._id %>">Delete</a></button>
         </div>
         </div>
      <%  }) %>
